@@ -2,13 +2,29 @@
 {
     class Point
     {
-        public int X;
-        public int Y;
+        private int x;
+        public int y;
+
+        public int X
+        {
+            get
+            {
+                return x;
+            }
+            set
+            {
+                x = value;
+            }
+        }
 
         public Point(int x, int y)
         {
-            X = x;
-            Y = y;
+            this.x = x;
+            this.y = y;
+        }
+        public Point()
+        {
+
         }
     }
     
