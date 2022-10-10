@@ -1,30 +1,60 @@
 ﻿namespace PointsAndLines
 {
-    class Point
+    class User
     {
-        private int x;
-        public int y;
+        private string username;
+        public int password;
+        public static int CurrID;
+        public readonly int ID;
 
-        public int X
+        public string Username
         {
             get
             {
-                return x;
+                return "Your username is "+username;
             }
             set
             {
-                x = value;
+                if(value.Length >= 4 && value.Length <= 10)
+                {
+                    username = value;
+                }
+                else
+                {
+                    System.Console.WriteLine("Oops! This is nota  valid username. Please usea username between 4 to 10 characters");
+                }
+               
             }
         }
 
-        public Point(int x, int y)
+        public int Password
         {
-            this.x = x;
-            this.y = y;
+            get
+            {
+                return password;
+            }
+            set
+            {
+                if (value >= 4 && value <= 10)
+                {
+                    password = value;
+                }
+                else
+                {
+                    System.Console.WriteLine("Oops! This is nota  valid password. Please use a password between 4 to 10 characters");
+                }
+            }
         }
-        public Point()
-        {
 
+        public User(string username, int password)
+        {
+            this.username = username;
+            this.password = password;
+        }
+        public User()
+        {
+            CurrID++;
+            ID = CurrID;
         }
     }
     
