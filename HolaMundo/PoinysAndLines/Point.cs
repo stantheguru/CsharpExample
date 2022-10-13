@@ -6,6 +6,9 @@
         public int password;
         public static int CurrID;
         public readonly int ID;
+        public readonly int HEIGHT;
+
+        public Race race;
 
         public string Username
         {
@@ -46,15 +49,29 @@
             }
         }
 
-        public User(string username, int password)
+        public User(string username, int password, Race race)
         {
             this.username = username;
             this.password = password;
+            this.race = race;
+
+            if (this.race == Race.Earthling)
+            {
+                HEIGHT = 100;
+
+            }
+            else if (this.race == Race.Martian)
+            {
+                HEIGHT = 180;
+            }
         }
         public User()
         {
             CurrID++;
             ID = CurrID;
+
+            
+            
         }
     }
     
